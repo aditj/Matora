@@ -11,7 +11,7 @@ print "Opened database"
 conn.execute('''CREATE TABLE DATA
          (COLNAME TEXT NOT NULL,
          BRANCH TEXT NOT NULL,
-         STATe TEXT NOT NULL,
+         STATE TEXT NOT NULL,
          O INT,
          C INT,
          Entrance TEXT,
