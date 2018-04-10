@@ -6,7 +6,7 @@ import sqlite3
 
 conn = sqlite3.connect('data.db')
 
-print "Opened database"
+print ("Opened database")
 
 conn.execute('''CREATE TABLE DATA
          (COLNAME TEXT NOT NULL,
@@ -20,12 +20,20 @@ conn.execute('''CREATE TABLE DATA
          DURATION INT);''')
 
 
-for j in range(1,936):
+for j in range(1,975):
 	lis = []
-	cells = (s1.row_slice(rowx=j, start_colx=1,end_colx = 9))
+	cells = (s1.row_slice(rowx=j, start_colx=1,end_colx = 10))
 	for i in cells:
-		lis.append(i)
-        lisi = lis.join(",")
-	conn.execute("INSERT INTO DATA (COLNAME,BRANCH,STATE,O,C,ENTRANCE,YEAR,TYPE,DURATION) VALUES"+"("+lisi");");
+		lis.append(i.value)
+
+	tup = (tuple(lis))
+	stri  = str(tup)
+	print(stri)
+	
+	
+        
+
+        
+	conn.execute("INSERT INTO DATA (COLNAME,BRANCH,STATE,O,C,ENTRANCE,YEAR,TYPE,DURATION) VALUES"+stri + ";");
         
     
