@@ -20,20 +20,23 @@ conn.execute('''CREATE TABLE DATA
          DURATION INT);''')
 
 
-for j in range(1,975):
+for j in range(2,973):
 	lis = []
 	cells = (s1.row_slice(rowx=j, start_colx=1,end_colx = 10))
 	for i in cells:
 		lis.append(i.value)
-
+	
 	tup = (tuple(lis))
+	print(tup)
+	
 	stri  = str(tup)
-	print(stri)
+	
 	
 	
         
 
         
-	conn.execute("INSERT INTO DATA (COLNAME,BRANCH,STATE,O,C,ENTRANCE,YEAR,TYPE,DURATION) VALUES"+stri + ";");
+	conn.execute("INSERT INTO DATA (COLNAME,BRANCH,STATE,O,C,ENTRANCE,YEAR,TYPE,DURATION) VALUES "+stri + ";");
         
-    
+conn.commit()
+conn.close()
