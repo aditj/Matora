@@ -21,7 +21,7 @@ def scorecal(i):
 	if dura_pref == True and i[8] == duration:
 		i[9]*= 1.2
 	if i[2]== hs:
-		i[9]*1.2
+		i[9]*=1.2
 
 	
 score  = 1  #temp name    
