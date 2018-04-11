@@ -10,9 +10,7 @@ branch = 'chemical'
 durationcriteria = True
 duration = 4
 dura_pref=True  #this is durationpreference 
-=======
 rank = [1000]   #rank (input by user)  order :jeemains ,jee advanced ,bits
-
 hs = 'UP'       #home state 
 durationcriteria = True #duration preference implementation strictly only or not
 duration = 4   #duration
