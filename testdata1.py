@@ -3,7 +3,7 @@ import sqlite3
 conn = sqlite3.connect('data.db')  #use data.db file
 cursor = conn.execute("SELECT * from DATA")
 ##########################################################
-<<<<<<< HEAD
+
 rank = 1200
 hs = 'UP'
 branch = 'chemical'
@@ -17,7 +17,7 @@ hs = 'UP'       #home state
 durationcriteria = True #duration preference implementation strictly only or not
 duration = 4   #duration
 dura_pref=True  #this is duration preference 
->>>>>>> d8ef55c4adbf2111ff773b8f367bc2aaa651fbc8
+
 prefferedcollege  =[] #ist of preffered colleges 
 chances = []       #all college with a good chance of entrance
 confirm = []
@@ -34,7 +34,7 @@ def scorecal(i):
         if "BITS" in i[0]:
                 i[9] *= 1.3
         if "National Institute of Technology" in i[0]:
-<<<<<<< HEAD
+
                 i[9] *= 1.2
         if dura_pref == True and i[8] == duration:
             i[9]*= 1.2
@@ -44,10 +44,7 @@ def scorecal(i):
         if branch.lower() in i[1].lower() :
                 i[9] *= 1.2
 
-=======
-            i[9] *= 1.2
-	
->>>>>>> d8ef55c4adbf2111ff773b8f367bc2aaa651fbc8
+
 
             
 
