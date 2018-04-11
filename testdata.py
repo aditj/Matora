@@ -2,8 +2,9 @@ import sqlite3
 conn = sqlite3.connect('data.db')
 cursor = conn.execute("SELECT * from DATA")
 ##########################################################
-rank = 1000
+rank = 1200
 hs = 'UP'
+branch = 'chemical'
 durationcriteria = True
 duration = 4
 dura_pref=True  #this is durationpreference 
@@ -18,16 +19,19 @@ def checkduration(i):
         else : return False
     else : return True
 def scorecal(i):
-	if dura_pref == True and i[8] == duration:
-		i[9]*= 1.2
-	if i[2]== hs:
-		i[9]*=1.2
-	if "Indian Institute of Technology" in i[0]:
-            i[9] *= 1.5
+        if "Indian Institute of Technology" in i[0]:
+                i[9] *= 1.5
         if "BITS" in i[0]:
-            i[9] *= 1.3
+                i[9] *= 1.3
         if "National Institute of Technology" in i[0]:
-            i[9] *= 1.2
+                i[9] *= 1.2
+        if dura_pref == True and i[8] == duration:
+            i[9]*= 1.2
+        if i[2] == hs:
+            i[9]*=1.2
+	
+        if branch.lower() in i[1].lower() :
+                i[9] *= 1.2
 
 
             
@@ -46,6 +50,8 @@ for i in cursor:
     elif i[4] > 1.1*rank and i[4] < 1.35 *rank and checkduration(i) :
         
         confirm.append(i)
+
+
 
 for i in confirm:
     print(i)
