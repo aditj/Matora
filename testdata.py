@@ -22,6 +22,15 @@ def scorecal(i):
 		i[9]*= 1.2
 	if i[2]== hs:
 		i[9]*=1.2
+	if "Indian Institute of Technology" in i[0]:
+            i[9] *= 1.5
+        if "BITS" in i[0]:
+            i[9] *= 1.3
+        if "National Institute of Technology" in i[0]:
+            i[9] *= 1.2
+
+
+            
 
 	
 score  = 1  #temp name    
