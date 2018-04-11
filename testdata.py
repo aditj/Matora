@@ -11,7 +11,9 @@ durationcriteria = True
 duration = 4
 dura_pref=True  #this is durationpreference 
 
-rank = [1000]   #rank (input by user)  order :jeemains ,jee advanced ,bits
+ranks = {'Mains':2100, 'Adv' : 1000, 'BITSAT' : 350, 'MUOET' : 40000}   #rank (input by user)  order :jeemains ,jee advanced ,bits
+
+
 
 hs = 'UP'       #home state 
 durationcriteria = True #duration preference implementation strictly only or not
@@ -58,16 +60,21 @@ for i in cursor:
     
     i.append(1)
     scorecal(i)
-    if i[4] > 0.7*rank[0] and i[4] < 1.1 *rank and checkduration(i):
+    rank = ranks[i[5]]
+    
+    if i[4] > 0.7*rank and i[4] < 1.1 *rank and checkduration(i):
                 
         chances.append(i)
-    elif i[4] > 1.1*rank[0] and i[4] < 1.35 *rank and checkduration(i) :
+    elif i[4] > 1.1*rank and i[4] < 1.35 *rank and checkduration(i) :
         
         confirm.append(i)
 
 
 
 for i in confirm:
+    print(i)
+print(123)
+for i in chances:
     print(i)
     
 
