@@ -5,24 +5,12 @@ $(document).ready(function() {
 		$.ajax({
 			data : {
 				mains : $('#mains').val(),
-				adv : $('#adv').val(),
-				bp : $('#bp').val()
+				
 			},
 			type : 'POST',
 			url : '/process'
 		})
-		.done(function(data) {
-
-			if (data.error) {
-				$('#errorAlert').text(data.error).show();
-				$('#successAlert').hide();
-			}
-			else {
-				$('#successAlert').text(data.name).show();
-				$('#errorAlert').hide();
-			}
-
-		});
+		
 
 		event.preventDefault();
 
