@@ -10,12 +10,11 @@ def index():
 def process():
 
 	mains = request.form['mains']
-	adv = request.form['adv']
-        
-	if mains and adv:
+	      
+	if mains:
 		
 
-		return jsonify({'name' : mains})
+		return jsonify({'mains' : mains})
 
 	return jsonify({'error' : 'Missing data!'})
 
